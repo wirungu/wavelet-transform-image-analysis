@@ -5,7 +5,7 @@
 
 #define SQRT1_2 sqrt(1.0 / 2)
 
-static void haar_transform_vector_forward(double *v, int n)
+void haar_transform_vector_forward(double *v, int n)
 {
     double h = sqrt(n);
     int i, d;
@@ -20,7 +20,7 @@ static void haar_transform_vector_forward(double *v, int n)
         }
 }
 
-static void haar_transform_vector_reverse(double *v, int n)
+void haar_transform_vector_reverse(double *v, int n)
 {
     int d, i;
     for (d = n / 2; d >= 1; d /= 2)
@@ -36,7 +36,7 @@ static void haar_transform_vector_reverse(double *v, int n)
         v[i] *= h;
 }
 
-static void haar_transform_vector(double *v, int n, int dir)
+void haar_transform_vector(double *v, int n, int dir)
 {
     if (dir == WT_FWD)
         haar_transform_vector_forward(v, n);
@@ -50,7 +50,7 @@ static void haar_transform_vector(double *v, int n, int dir)
     }
 }
 
-static void haar_transform_matrix_forward(double **a, int m, int n)
+void haar_transform_matrix_forward(double **a, int m, int n)
 {
     int i, j;
     double *tmp = (double *)malloc(m * sizeof(double));
@@ -69,7 +69,7 @@ static void haar_transform_matrix_forward(double **a, int m, int n)
     free(tmp);
 }
 
-static void haar_transform_matrix_reverse(double **a, int m, int n)
+void haar_transform_matrix_reverse(double **a, int m, int n)
 {
     int i, j;
     double *tmp = (double *)malloc(m * sizeof(double));
