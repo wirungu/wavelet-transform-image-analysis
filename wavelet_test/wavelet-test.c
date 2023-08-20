@@ -41,7 +41,7 @@ static void test_matrix(int m, int n)
     printf("reconstructed matrix:\n");
     print_matrix("%8.4f ", a, m, n);
     putchar('\n');
-    free_matrix(a, m);
+    free_matrix(a);
 }
 
 int main(void)
