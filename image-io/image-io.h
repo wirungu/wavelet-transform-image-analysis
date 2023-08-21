@@ -10,4 +10,4 @@ struct image {
 struct image *read_image(char *filename);
 void write_image(char *filename, struct image *img);
 void free_image(struct image *img);
-#endif /∗ H_IMAGE_IO_H */
+#endif
