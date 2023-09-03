@@ -8,6 +8,8 @@ The goal of this project is to implement [Haar wavelet transforms](https://en.wi
 
 ## Features
 
+The project is not yet complete but should have the following features:
+
 - **1D and 2D Haar Wavelet Transforms**: This project provides implementations for both 1D and 2D Haar wavelet transforms. The 1D transform can be applied to signals, while the 2D transform is designed for images.
 
 - **Image Import and Export**: The project includes functions for reading and writing PGM and PPM image files. This enables you to process existing images or save the results of your wavelet analysis.
