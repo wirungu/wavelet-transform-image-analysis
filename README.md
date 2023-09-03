@@ -4,7 +4,7 @@ This is my implementation of one of the longer projects in Rouben Rostamian's *P
 
 ## Project Overview
 
-The goal of this project is to apply Haar wavelet transforms to image data for compression and analysis. The Haar wavelet transform is a mathematical technique that allows you to represent an image in a different basis, making it possible to analyze its frequency content and compress it effectively.
+The goal of this project is to implement [Haar wavelet transforms](https://en.wikipedia.org/wiki/Haar_wavelet) and then apply them to image data for compression and analysis.
 
 ## Features
 
@@ -18,7 +18,7 @@ The goal of this project is to apply Haar wavelet transforms to image data for c
 
 ## Getting Started
 
-To get started with this project, you'll need to set up a development environment with CMake and Netpbm installed. You can then compile the code and run the `image-analysis` executable to apply wavelet transforms and analyze images.
+To get started with this project, you'll need to set up CMake and Netpbm. You can then compile the code and run e.g. the `image-analysis` executable to apply wavelet transforms and analyze images. Each folder corresponds to a project chapter in the book. They are self-contained and meant to be built separately. Full details are of course in the book.
 
 ## Usage
 
@@ -29,9 +29,9 @@ $ ./image-analysis 0.9 profile.pgm profile-9.pgm
 ```
 ## Examples
 **Original image**
-![**Original image**](https://i.imgur.com/YBNGYJs.jpg)
+![**Original image**](https://i.imgur.com/YBNGYJs.jpg =250x250)
 **Compressed image**
-![**Compressed image**](https://i.imgur.com/8T6Cep4.jpg)
+![**Compressed image**](https://i.imgur.com/8T6Cep4.jpg=250x250)
 
 ## Acknowledgments
 
