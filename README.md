@@ -28,9 +28,9 @@ Here's an example of how to use the `image-analysis` executable:
 $ ./image-analysis 0.9 profile.pgm profile-9.pgm
 ```
 ## Examples
-![**Original image**](/image-analysis/profile.pgm)
+![**Original image**](https://raw.githubusercontent.com/wirungu/wavelet-transform-image-analysis/blob/main/image-analysis/profile.pgm)
 
-![**Compressed image**](/image-analysis/profile-9.pgm)
+![**Compressed image**](https://raw.githubusercontent.com/wirungu/wavelet-transform-image-analysis/blob/main/image-analysis/profile-9.pgm)
 
 ## Acknowledgments
 
