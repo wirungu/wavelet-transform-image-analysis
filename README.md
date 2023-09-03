@@ -35,6 +35,7 @@ $ ./image-analysis 0.9 profile.pgm profile-9.pgm
 **Compressed image**
 
 <img src="https://i.imgur.com/8T6Cep4.jpg" width="256">
+
 ## Acknowledgments
 
 Rouben Rostamian for the inspiration and project idea.
