@@ -22,15 +22,15 @@ To get started with this project, you'll need to set up a development environmen
 
 ## Usage
 
-Here's an example of how to use the `image-analysis` executable:
+Here's an example of how to use the `image-analysis` executable to compress a grayscale image:
 
 ```bash
 $ ./image-analysis 0.9 profile.pgm profile-9.pgm
 ```
 ## Examples
-![**Original image**](https://raw.githubusercontent.com/wirungu/wavelet-transform-image-analysis/blob/main/image-analysis/profile.pgm)
+![**Original image**](https://raw.githubusercontent.com/wirungu/wavelet-transform-image-analysis/blob/main/image-analysis/profile.jpg)
 
-![**Compressed image**](https://raw.githubusercontent.com/wirungu/wavelet-transform-image-analysis/blob/main/image-analysis/profile-9.pgm)
+![**Compressed image**](https://raw.githubusercontent.com/wirungu/wavelet-transform-image-analysis/blob/main/image-analysis/profile-9.jpg)
 
 ## Acknowledgments
 
