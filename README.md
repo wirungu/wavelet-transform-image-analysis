@@ -29,9 +29,12 @@ $ ./image-analysis 0.9 profile.pgm profile-9.pgm
 ```
 ## Examples
 **Original image**
-<img src="https://i.imgur.com/YBNGYJs.jpg" width="100" height="100">
+
+<img src="https://i.imgur.com/YBNGYJs.jpg" width="256">
+
 **Compressed image**
-<img src="https://i.imgur.com/8T6Cep4.jpg" width="100" height="100">
+
+<img src="https://i.imgur.com/8T6Cep4.jpg" width="256">
 ## Acknowledgments
 
 Rouben Rostamian for the inspiration and project idea.
