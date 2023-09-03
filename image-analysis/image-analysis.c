@@ -28,43 +28,53 @@ static int prune_matrix(double **a, int m, int n, double rel_err) {
 
     // Step 2: Calculate abs_err2
     double abs_err2 = norm2 * rel_err * rel_err;
+    double abs_err = sqrt(abs_err2);
 
     // Step 3: Bisection algorithm to find threshold
+    // Initialize bisection parameters
     double lower = min;
     double upper = max;
+    double epsilon = 1e-6; // Tolerance factor for stopping
     double threshold = (lower + upper) / 2.0;
 
-    while (upper - lower > 1e-6) { // Bisection tolerance
-        zero_count = 0; // Reset zero count
+    while ((upper - lower) > epsilon * abs_err) { // Stopping criterion
+        // Compute the truncation error for the current threshold
+        double truncation_error = 0.0;
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (fabs(a[i][j]) < threshold) {
-                    a[i][j] = 0.0;
-                    zero_count++; // Increment zero count
+                    truncation_error += a[i][j] * a[i][j];
                 }
             }
         }
 
-        // Compute the sum of squared entries
-        double sum_squared = 0.0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                sum_squared += a[i][j] * a[i][j];
-            }
-        }
-
-        if (sum_squared < abs_err2) {
-            lower = threshold;
-        } else {
+        if (truncation_error > abs_err) {
+            // We are truncating too much, adjust the upper bound
             upper = threshold;
+        } else {
+            // We are truncating too little, adjust the lower bound
+            lower = threshold;
         }
 
+        // Update the threshold
         threshold = (lower + upper) / 2.0;
     }
 
-    return zero_count; // Return the number of zeroed entries
+    // Step 4: Set the pixels below the final threshold to zero
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (fabs(a[i][j]) <= threshold) {
+                a[i][j] = 0.0;
+                zero_count++; // Increment zero count
+            }
+        }
+    }
+
+    // Step 5: Return the number of zeroed entries
+    return zero_count;
 }
+
 
 static void clip_matrix(double **a, int m, int n, int M) {
     for (int i = 0; i < m; i++) {
@@ -86,25 +96,10 @@ static void reduce_pgm_image(struct image *img, double rel_err)
     int M = img->pam.maxval;
     int zero_count;
 
-    printf("Original Gray Matrix:\n");
-    print_matrix("%lf ", img->g, m, n);
-
     haar_transform_matrix(img->g, m, n, WT_FWD);
-    printf("Wavelet Transformed Gray Matrix:\n");
-    print_matrix("%lf ", img->g, m, n);
-
     zero_count = prune_matrix(img->g, m, n, rel_err);
-    printf("Pruned Gray Matrix:\n");
-    print_matrix("%lf ", img->g, m, n);
-
     haar_transform_matrix(img->g, m, n, WT_REV);
-    printf("Reconstructed Gray Matrix:\n");
-    print_matrix("%lf ", img->g, m, n);
-
     clip_matrix(img->g, m, n, M);
-    printf("Clipped Gray Matrix:\n");
-    print_matrix("%lf ", img->g, m, n);
-
     fprintf(stderr, "zeroed %d of %d wavelet coefficients, %d remaining\n",
             zero_count, m*n, m*n - zero_count);
 }

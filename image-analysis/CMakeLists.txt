@@ -33,8 +33,8 @@ target_include_directories(image-analysis PRIVATE ${NETPBM_INCLUDE_DIRS})
 link_directories(${NETPBM_LIBRARY_DIRS})
 
 # Copy input image to the build directory
-configure_file(reese_witherspoon.pgm ${CMAKE_CURRENT_BINARY_DIR}/reese_witherspoon.pgm COPYONLY)
+configure_file(profile.pgm ${CMAKE_CURRENT_BINARY_DIR}/profile.pgm COPYONLY)
 
 # Copy input image to the build directory
-configure_file(reese_witherspoon.ppm ${CMAKE_CURRENT_BINARY_DIR}/reese_witherspoon.ppm COPYONLY)
+configure_file(profile.ppm ${CMAKE_CURRENT_BINARY_DIR}/profile.ppm COPYONLY)
 
