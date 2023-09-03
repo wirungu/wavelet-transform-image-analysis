@@ -28,9 +28,9 @@ Here's an example of how to use the `image-analysis` executable to compress a gr
 $ ./image-analysis 0.9 profile.pgm profile-9.pgm
 ```
 ## Examples
-![**Original image**](https://raw.githubusercontent.com/wirungu/wavelet-transform-image-analysis/blob/main/image-analysis/profile.jpg)
+![**Original image**](https://imgur.com/a/tYgKVNr)
 
-![**Compressed image**](https://raw.githubusercontent.com/wirungu/wavelet-transform-image-analysis/blob/main/image-analysis/profile-9.jpg)
+![**Compressed image**](https://imgur.com/a/bpRg94t)
 
 ## Acknowledgments
 
